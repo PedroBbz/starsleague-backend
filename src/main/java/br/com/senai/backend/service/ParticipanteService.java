@@ -39,6 +39,7 @@ public class ParticipanteService {
         participante.setNome(participanteAtual.getNome());
         participante.setEmail(participanteAtual.getEmail());
         participante.setSenha(participanteAtual.getSenha());
+        participante.setImage(participanteAtual.getImage());
         return participanteRepository.save(participante);
     }
 }

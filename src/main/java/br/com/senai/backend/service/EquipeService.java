@@ -40,6 +40,7 @@ public class EquipeService {
         Equipe equipe = findById(id);
         equipe.setN_participantes(equipeAtual.getN_participantes());
         equipe.setNome_equipe(equipeAtual.getNome_equipe());
+        equipe.setImage(equipeAtual.getImage());
         return equipeRepository.save(equipe);
     }
 

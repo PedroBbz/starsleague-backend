@@ -42,6 +42,7 @@ public class OrganizadorService {
         organizador.setNome(organizadorAtual.getNome());
         organizador.setEmail(organizadorAtual.getEmail());
         organizador.setSenha(organizadorAtual.getSenha());
+        organizador.setImage(organizadorAtual.getImage());
         return organizadorRepository.save(organizador);
     }
 }

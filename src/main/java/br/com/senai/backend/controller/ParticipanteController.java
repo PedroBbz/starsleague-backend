@@ -14,11 +14,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.senai.backend.entity.Participante;
+import br.com.senai.backend.repository.ParticipanteRepository;
 import br.com.senai.backend.service.ParticipanteService;
 
 @RestController
 @RequestMapping("/participantes")
 public class ParticipanteController {
+
+    @Autowired
+    private ParticipanteRepository participanteRepository;
 
     @Autowired
     private ParticipanteService participanteService;
@@ -52,6 +56,7 @@ public class ParticipanteController {
         Participante participante = participanteService.update(id, participanteAtual);
         return ResponseEntity.ok().body(participante);
     }
+
 }
 
 

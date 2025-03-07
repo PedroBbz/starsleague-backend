@@ -1,28 +1,30 @@
 package br.com.senai.backend.entity;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
 @Entity
-public class Organizador {
+public class EntrarTorneio {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nome;
-    private String email;
-    private String senha;
-    
-    @Lob
-    @Column(columnDefinition = "LONGBLOB")
-    private byte[] image;
 
+    @ManyToOne
+    @JoinColumn(name = "equipe_id")
+    private Equipe equipe;
+
+    @ManyToOne
+    @JoinColumn(name = "torneio_id")
+    private Torneio torneio;
+
+    
 }

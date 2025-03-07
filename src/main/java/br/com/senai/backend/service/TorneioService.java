@@ -40,7 +40,11 @@ public class TorneioService {
         Torneio torneio = findById(id);
         torneio.setN_de_equipes(torneioAtual.getN_de_equipes());
         torneio.setNome_torneio(torneioAtual.getNome_torneio());
-        torneio.setGratuito(torneioAtual.getGratuito());
+        torneio.setJogo(torneioAtual.getJogo());
+        torneio.setEntrada(torneioAtual.getEntrada());
+        torneio.setChaveamento(torneioAtual.getChaveamento());
+        torneio.setTipo_sala(torneioAtual.getTipo_sala());
+        torneio.setImage(torneioAtual.getImage());
         return torneioRepository.save(torneio);
     }
 
